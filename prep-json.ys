@@ -1,0 +1,41 @@
+read_verilog -sv FILES
+hierarchy -check -top TOP_MOD
+proc_clean
+proc_rmdead
+proc_prune
+proc_init
+proc_arst
+proc_rom
+proc_mux
+proc_dlatch
+proc_dff
+proc_memwr
+proc_clean
+opt_expr
+flatten
+opt_expr
+opt_clean
+opt -nodffe -nosdff
+fsm
+opt
+wreduce
+peepopt
+opt_clean
+share
+opt
+memory -nomap
+opt_clean
+opt -fast -full
+memory_map
+
+splitnets
+splitcells
+splitnets
+splitcells
+splitnets
+splitcells
+splitnets
+
+opt -full
+dffunmap -ce-only
+write_json OUT_JSON

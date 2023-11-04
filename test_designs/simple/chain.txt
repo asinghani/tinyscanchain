@@ -1,0 +1,4 @@
+0: shreg[0]
+1: shreg[1]
+2: shreg[2]
+3: shreg[3]
